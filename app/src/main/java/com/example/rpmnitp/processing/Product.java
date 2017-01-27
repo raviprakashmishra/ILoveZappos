@@ -7,7 +7,7 @@ package com.example.rpmnitp.processing;
 public class Product {
     private String brandName;
 
-    private String productUrl;
+    /*private String productUrl;
 
 
     public Product(String brandName, String productUrl){
@@ -30,5 +30,10 @@ public class Product {
 
     public void setUrl(String productUrl) {
         this.productUrl = productUrl;
+    }
+*/
+    @Override
+    public String toString() {
+        return(brandName);
     }
 }

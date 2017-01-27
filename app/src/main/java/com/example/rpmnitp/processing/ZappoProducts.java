@@ -8,5 +8,5 @@ package com.example.rpmnitp.processing;
 import java.util.List;
 
 public class ZappoProducts {
-    List<Product> items;
+    List<Product> products;
 }

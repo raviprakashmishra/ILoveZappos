@@ -22,7 +22,7 @@ import retrofit2.http.Query;
 
 public class RestAPIProcessing implements Callback<ZappoProducts>{
 
-    private String prod;
+    private String prodName;
     private String products;
     private ListActivity activity;
     private Adapter adapter;
@@ -32,7 +32,7 @@ public class RestAPIProcessing implements Callback<ZappoProducts>{
         this.adapter = adapter;
     }
     public void setPrdToSearch(String prod){
-        this.prod = prod;
+        this.prodName = prod;
     }
 
 
@@ -47,11 +47,12 @@ public class RestAPIProcessing implements Callback<ZappoProducts>{
         // prepare call in Retrofit 2.0
         ZappoAPI zappoAPI = retrofit.create(ZappoAPI.class);
 
-        Call<ZappoProducts> call = zappoAPI.searchProducts(this.prod, IConstant.API_KEY);
+        Call<ZappoProducts> call = zappoAPI.searchProducts(this.prodName, IConstant.API_KEY);
         //asynchronous call
         call.enqueue(this);
 
         String url = call.request().url().toString();
+
         Log.d("url is",url);
         Log.d("url is",url);
     }
@@ -62,12 +63,12 @@ public class RestAPIProcessing implements Callback<ZappoProducts>{
         String body = response.body().toString();
         //Log.d("url is",url);
 
-        List<Product> items = response.body().items;
-        String[] values = new String[items.size()];
+        List<Product> products = response.body().products;
+        String[] values = new String[products.size()];
 
 
-        for (int i=0;i<items.size();i++){
-            values[i] = items.get(i).getDisplayName();
+        for (int i=0;i<products.size();i++){
+            values[i] = products.get(i).toString();
         }
 
         ArrayAdapter<String> adapter = (ArrayAdapter<String>) this.adapter;
