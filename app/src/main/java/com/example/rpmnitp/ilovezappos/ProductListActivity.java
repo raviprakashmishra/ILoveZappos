@@ -13,6 +13,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.rpmnitp.processing.RestAPIProcessing;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,20 +38,35 @@ public class ProductListActivity extends ListActivity {
 
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
             String query = intent.getStringExtra(IConstant.PROD_EXTRA);
-            //call rest api here and get result
 
-            updateListView(prodList);
+            ArrayAdapter<String> adapter = initializeAdapter();
+            //call rest api here and get result
+            RestAPIProcessing rest = new RestAPIProcessing(this,adapter);
+            rest.setPrdToSearch(query);
+            rest.callRestAPI();
+            //rest.getProducts();
+            //updateListView(prodList);
         }
     }
 
 
     private void updateListView(List<String> prodList){
         // using list so that in future multiple search results can also be searched
-        String[] values = new String[] { "Android", "iPhone", "WindowsMobile",
+       /* String[] values = new String[] { "Android", "iPhone", "WindowsMobile",
                 "Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
                 "Linux", "OS/2" };
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, values);
-        setListAdapter(adapter);
+        setListAdapter(adapter);*/
     }
+
+    private ArrayAdapter<String> initializeAdapter(){
+        String[] values = new String[] {};
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1, values);
+        setListAdapter(adapter);
+
+        return adapter;
+    }
+
 }

@@ -10,6 +10,10 @@ import retrofit2.http.Query;
 
 
 public interface ZappoAPI {
-    @GET("/2.2/questions?order=desc&sort=creation&site=stackoverflow")
-    Call<ZappoProducts> searchProducts(@Query("tagged") String tags);
+    @GET("/Search?")
+    Call<ZappoProducts> searchProducts(@Query("term") String tags,@Query("key") String key);
+
+
+
+
 }

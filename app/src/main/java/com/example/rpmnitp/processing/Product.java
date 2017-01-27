@@ -5,30 +5,30 @@ package com.example.rpmnitp.processing;
  */
 
 public class Product {
-    private String displayName;
+    private String brandName;
 
-    private String url;
+    private String productUrl;
 
 
-    public Product(String displayName, String url){
-        this.displayName = displayName;
-        this.url = url;
+    public Product(String brandName, String productUrl){
+        this.brandName = brandName;
+        this.productUrl = productUrl;
     }
 
     public String getDisplayName() {
-        return displayName;
+        return brandName;
     }
 
     public String getUrl() {
-        return url;
+        return productUrl;
     }
 
 
-    public void setDisplayName(String displayName) {
-        this.displayName = displayName;
+    public void setDisplayName(String brandName) {
+        this.brandName = brandName;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setUrl(String productUrl) {
+        this.productUrl = productUrl;
     }
 }
