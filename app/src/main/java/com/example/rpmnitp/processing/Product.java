@@ -1,39 +1,29 @@
 package com.example.rpmnitp.processing;
 
+import com.google.gson.annotations.SerializedName;
+
 /**
  * Created by rpmnitp on 1/26/2017.
  */
 
 public class Product {
-    private String brandName;
+    private String productId;
 
-    /*private String productUrl;
-
-
-    public Product(String brandName, String productUrl){
-        this.brandName = brandName;
-        this.productUrl = productUrl;
-    }
-
-    public String getDisplayName() {
-        return brandName;
-    }
-
-    public String getUrl() {
-        return productUrl;
+    public Product(String productId) {
+        this.productId = productId;
     }
 
 
-    public void setDisplayName(String brandName) {
-        this.brandName = brandName;
+    public String getBrandName() {
+        return productId;
     }
 
-    public void setUrl(String productUrl) {
-        this.productUrl = productUrl;
+    public void setBrandName(String productId) {
+        this.productId = productId;
     }
-*/
+
     @Override
     public String toString() {
-        return(brandName);
+        return(productId);
     }
 }

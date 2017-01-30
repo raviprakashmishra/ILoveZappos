@@ -5,8 +5,12 @@ package com.example.rpmnitp.processing;
  */
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ZappoProducts {
-    List<Product> products;
+    List<Product> products  = new ArrayList<>();
+    public List<Product> getProducts() {
+        return products;
+    }
 }

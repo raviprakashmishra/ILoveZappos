@@ -1,5 +1,7 @@
 package com.example.rpmnitp.processing;
 
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
@@ -10,10 +12,7 @@ import retrofit2.http.Query;
 
 
 public interface ZappoAPI {
-    @GET("/Search?")
-    Call<ZappoProducts> searchProducts(@Query("term") String tags,@Query("key") String key);
-
-
-
+    @GET("/Search")
+    Call<ZappoProducts> searchProducts(@Query("term") String tags, @Query("key") String key);
 
 }
