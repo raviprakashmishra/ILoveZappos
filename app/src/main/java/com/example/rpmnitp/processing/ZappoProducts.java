@@ -9,8 +9,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ZappoProducts {
-    List<Product> products  = new ArrayList<>();
+    List<Product> results  = new ArrayList<>();
+
     public List<Product> getProducts() {
-        return products;
+        return results;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (Product p:results){
+            sb.append(p.getBrandName()+",");
+        }
+        return sb.toString();
     }
 }

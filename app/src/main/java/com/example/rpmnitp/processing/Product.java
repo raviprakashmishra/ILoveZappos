@@ -7,23 +7,23 @@ import com.google.gson.annotations.SerializedName;
  */
 
 public class Product {
-    private String productId;
+    private String brandName;
 
     public Product(String productId) {
-        this.productId = productId;
+        this.brandName = productId;
     }
 
 
     public String getBrandName() {
-        return productId;
+        return brandName;
     }
 
     public void setBrandName(String productId) {
-        this.productId = productId;
+        this.brandName = productId;
     }
 
     @Override
     public String toString() {
-        return(productId);
+        return(brandName);
     }
 }

@@ -36,6 +36,8 @@ public class RestAPIProcessing implements Callback<ZappoProducts>{
     private ListActivity activity;
     private Adapter adapter;
 
+
+
     public RestAPIProcessing(ListActivity activity, Adapter adapter){
         this.activity = activity;
         this.adapter = adapter;
@@ -60,17 +62,19 @@ public class RestAPIProcessing implements Callback<ZappoProducts>{
 
 
 
+
+
         // prepare call in Retrofit 2.0
         ZappoAPI zappoAPI = retrofit.create(ZappoAPI.class);
 
-        Call<ZappoProducts> call = zappoAPI.searchProducts(this.prodName, IConstant.API_KEY);
+        Call<ZappoProducts> call = zappoAPI.searchProducts("nike", IConstant.API_KEY);
         //asynchronous call
         call.enqueue(this);
 
         String url = call.request().url().toString();
-
+/*
         Log.d("url is",url);
-        Log.d("url is",url);
+        Log.d("url is",url);*/
     }
 
 
@@ -85,9 +89,13 @@ public class RestAPIProcessing implements Callback<ZappoProducts>{
             products = response.body().getProducts();
         }
 
+        System.out.println("body is >>>> "+body);
+         String[] values = new String[products.size()];
 
-        String[] values = new String[products.size()];
 
+        String raw = response.raw().toString();
+        System.out.println(body);
+        //Log.d("response", raw);
 
         for (int i=0;i<products.size();i++){
             values[i] = products.get(i).toString();
