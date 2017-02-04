@@ -1,6 +1,7 @@
 package com.example.rpmnitp.adapters;
 
 import android.content.Context;
+import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,9 +38,15 @@ public class SearchResultArrayAdapter extends ArrayAdapter<Product> {
         ImageView imageView = (ImageView) rowView.findViewById(R.id.icon);
 
         Picasso.with(context).load(values.get(position).getThumbnailImageUrl()).into(imageView);
-        textView.setText(values.get(position).getBrandName());
+        textView.setText(values.get(position).getProductName());
 
 
         return rowView;
+    }
+
+    @Nullable
+    @Override
+    public Product getItem(int position) {
+        return values.get(position);
     }
 }

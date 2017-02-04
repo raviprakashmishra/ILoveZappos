@@ -28,6 +28,8 @@ import retrofit2.http.Query;
 
 /**
  * Created by rpmnitp on 1/26/2017.
+ *
+ * Rest API processor
  */
 
 public class RestAPIProcessingBuilder implements Callback<ZappoProducts>{

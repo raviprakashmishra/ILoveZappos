@@ -1,6 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="product" type="com.example.rpmnitp.processing.Product"/>
+    </data>
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">>
+
+        <ImageView
+            android:id="@+id/prod_image"
+            android:layout_width="match_parent"
+            android:layout_height="150px"
+            android:layout_marginLeft="4px"
+            android:layout_marginRight="10px"
+            android:layout_marginTop="4px"
+            android:layout_weight="1"
+            android:background="@drawable/border"
+            >
+            >
+        </ImageView>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">>
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">>
+
+            <TextView
+                android:id="@+id/prod_name"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:text="@{product.productName}"
+                android:textSize="50px"
+                android:layout_weight="1">
+            </TextView>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">>
+
+                <TextView
+                    android:id="@+id/prod_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{product.originalPrice}"
+                    android:textSize="50px"
+                    android:layout_weight="1">
+                </TextView>
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/fab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end"
+                    android:layout_margin="15dp"
+                    android:src="@drawable/fab" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/prod_description"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="@{product.brandName}"
+            android:textSize="50px"
+            android:layout_weight="1">
+        </TextView>
+
+    </LinearLayout>
+
 </LinearLayout>
+
+</layout>
