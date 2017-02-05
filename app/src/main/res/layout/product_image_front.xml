@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+        <variable name="product" type="com.example.rpmnitp.processing.Product"/>
+    </data>
+
+    <ImageView
+        android:id="@+id/prod_image"
+        android:layout_width="match_parent"
+        android:layout_height="150px"
+        android:layout_marginLeft="4px"
+        android:layout_marginRight="10px"
+        android:layout_marginTop="4px"
+        android:layout_weight="1"
+        app:thumbnailImageUrl="@{product.thumbnailImageUrl}"
+        android:background="@drawable/border"
+        >
+        >
+    </ImageView>
+
+
+</LinearLayout>
+
+
+</layout>
