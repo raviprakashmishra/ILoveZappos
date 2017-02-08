@@ -32,12 +32,24 @@ public class Product extends BaseObservable implements Serializable{
 
     private String originalPrice;
 
+    private String productUrl;
 
 
 
     public Product(String productId, String thumbnailImageUrl) {
         this.brandName = productId;
         this.thumbnailImageUrl = thumbnailImageUrl;
+    }
+
+
+    @Bindable
+
+    public String getProductUrl() {
+        return productUrl;
+    }
+
+    public void setProductUrl(String productUrl) {
+        this.productUrl = productUrl;
     }
 
 
@@ -93,7 +105,7 @@ public class Product extends BaseObservable implements Serializable{
     public static void loadImage(ImageView view, String imageUrl) {
         Picasso.with(view.getContext())
                 .load(imageUrl)
-                .placeholder(R.drawable.fab)
+                .placeholder(R.drawable.fabblue)
                 .into(view);
     }
 }

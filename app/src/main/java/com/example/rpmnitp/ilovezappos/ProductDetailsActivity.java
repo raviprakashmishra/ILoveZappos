@@ -1,26 +1,26 @@
 package com.example.rpmnitp.ilovezappos;
 
-import android.content.Context;
+import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AppCompatActivity;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.view.animation.AccelerateDecelerateInterpolator;
+
 import android.widget.Toast;
 
 import com.example.rpmnitp.ilovezappos.databinding.ProductDetailBinding;
 import com.example.rpmnitp.processing.Product;
-import com.squareup.picasso.Picasso;
 
 /**
- * Created by dell on 2/2/2017.
+ * This activity is responsible for
+ * creating product details page and all the interaction
+ * on details page
+ * Created by rpmnitp on 2/2/2017.
  */
 
-public class ProductDetailsActivity extends AppCompatActivity {
+public class ProductDetailsActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,32 +30,23 @@ public class ProductDetailsActivity extends AppCompatActivity {
 
     }
 
+
     private void handleIntent(Intent intent){
 
         Product product = (Product) intent.getSerializableExtra("selectedProduct");
 
-        ImageView prodImg = (ImageView)findViewById(R.id.prod_image);
-        /*TextView prodName = (TextView) findViewById(R.id.prod_name);
-        TextView prodDesc = (TextView) findViewById(R.id.prod_description);
-        TextView prodPrice = (TextView) findViewById(R.id.prod_price);*/
-
-        Picasso.with(getApplicationContext()).load(product.getThumbnailImageUrl()).into(prodImg);
-       /* prodName.setText(product.getProductName());
-        prodDesc.setText(product.getBrandName());
-        prodPrice.setText(product.getOriginalPrice());*/
-
-
+        // data binding
         ProductDetailBinding binding = DataBindingUtil.setContentView(this, R.layout.product_detail);
         binding.setProduct(product);
 
         // set FAB click listener
         handleFABClick();
-
-
-
     }
 
-
+    /**
+     * handles what to
+     * on Floating action button click
+     */
 
     private void handleFABClick(){
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -63,11 +54,30 @@ public class ProductDetailsActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*Intent intent = new Intent(MainActivity.this, NewMessageActivity.class);
-                startActivity(intent);*/
-                Toast.makeText(activity," FAB selected", Toast.LENGTH_LONG).show();
+                Toast.makeText(activity," Product added into cart", Toast.LENGTH_LONG).show();
+                //Intent intent = new Intent(activity, CardFlipActivity.class);
+               // startActivity(intent);
+               callFlipCard();
             }
         });
+    }
+
+    /**
+     * does flip card animation
+     */
+    private void callFlipCard(){
+
+        // very basic animation
+        // do fragment based card flip view animation
+        // if time allows
+
+        View prodImgView = findViewById(R.id.prod_image);
+        ObjectAnimator animation = ObjectAnimator.ofFloat(prodImgView, "rotationY", 0.0f, 360f);
+        animation.setDuration(500);
+        animation.setRepeatCount(1);
+        animation.setInterpolator(new AccelerateDecelerateInterpolator());
+        animation.start();
+
     }
 
 

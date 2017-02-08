@@ -1,33 +1,32 @@
 package com.example.rpmnitp.ilovezappos;
 
 /**
+ * List activity to list all
+ * the products returned on user's search
+ *
  * Created by rpmnitp on 1/26/2017.
  */
 
 import android.app.ListActivity;
-import android.app.SearchManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.example.rpmnitp.adapters.SearchResultArrayAdapter;
 import com.example.rpmnitp.processing.Product;
 import com.example.rpmnitp.processing.RestAPIProcessingBuilder;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class ProductListActivity extends ListActivity {
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
 
-
-        handleIntent(getIntent());
+        // search product
+        searchProducts(getIntent());
 
     }
 
@@ -45,39 +44,45 @@ public class ProductListActivity extends ListActivity {
         Product product = (Product) searchAdapter.getItem(position);
 
         Intent intent = new Intent(this, ProductDetailsActivity.class);
-        intent.putExtra("selectedProduct", product);
+        intent.putExtra(IConstant.SEL_PRODUCT, product);
 
         startActivity(intent);
 
-       /* String item = (String) getListAdapter().getItem(position);
-        Toast.makeText(this, item + " selected", Toast.LENGTH_LONG).show();*/
     }
 
-    private void handleIntent(Intent intent) {
+    /**
+     * searches product
+     * based on user's input
+     *
+     * @param intent - intent
+     */
+    private void searchProducts(Intent intent) {
         List<String> prodList = new ArrayList<>();
 
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
             String query = intent.getStringExtra(IConstant.PROD_EXTRA);
 
 
-            //call rest api here and get result
+            //This Rest API builder builds instance of Rest API
+            // with "query" string set and finally call the API
+            // and gets back products
             RestAPIProcessingBuilder rest = new RestAPIProcessingBuilder(this)
                                             .setPrdToSearch(query)
-                                            .callRestAPI();
-
-            String[] products = rest.getProducts();
+                                            .callRestAPI(IConstant.BASE_URL);
 
         }
     }
 
-
+    /**
+     * This method should be invoked from
+     * outside of this class to update the product list
+     * in Product List View
+     * @param prodList - List of searched product
+     */
     public void updateListView(List<Product> prodList){
 
         SearchResultArrayAdapter adapter = new SearchResultArrayAdapter(this,prodList);
         setListAdapter(adapter);
     }
-
-
-
 
 }

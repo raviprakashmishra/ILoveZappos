@@ -6,9 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
-    <data>
-        <variable name="product" type="com.example.rpmnitp.processing.Product"/>
-    </data>
+
 
     <ImageView
         android:id="@+id/prod_image"
@@ -18,7 +16,6 @@
         android:layout_marginRight="10px"
         android:layout_marginTop="4px"
         android:layout_weight="1"
-        app:thumbnailImageUrl="@{product.thumbnailImageUrl}"
         android:background="@drawable/border"
         >
         >

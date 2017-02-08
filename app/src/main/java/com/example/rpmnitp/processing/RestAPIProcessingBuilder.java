@@ -30,6 +30,9 @@ import retrofit2.http.Query;
  * Created by rpmnitp on 1/26/2017.
  *
  * Rest API processor
+ * This class uses builder pattern to
+ * instantiate the class and finally
+ * getting the result
  */
 
 public class RestAPIProcessingBuilder implements Callback<ZappoProducts>{
@@ -40,38 +43,37 @@ public class RestAPIProcessingBuilder implements Callback<ZappoProducts>{
     private Adapter adapter;
     private String[] prods;
 
-
+    /**
+     *
+     * @param activity - The Product List Activity
+     */
 
     public RestAPIProcessingBuilder(ListActivity activity){
-
         this.activity = activity;
     }
+
     public RestAPIProcessingBuilder setPrdToSearch(String prod){
         this.prodName = prod;
         return this;
     }
 
+    /**
+     * Creates retrofit instance to do
+     * REST call asynchronously      *
+     * @param baseURL - base URL to be used in Rest API call
+     * @return RestAPIProcessingBuilder
+     */
 
-    public RestAPIProcessingBuilder callRestAPI(){
-       // https://api.zappos.com/Search?term=nike&key=b743e26728e16b81da139182bb2094357c31d331
-
-
-
-
+    public RestAPIProcessingBuilder callRestAPI(String baseURL){
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://api.zappos.com")
+                .baseUrl(baseURL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-
-
-
-
-
 
         // prepare call in Retrofit 2.0
         ZappoAPI zappoAPI = retrofit.create(ZappoAPI.class);
 
-        Call<ZappoProducts> call = zappoAPI.searchProducts("nike", IConstant.API_KEY);
+        Call<ZappoProducts> call = zappoAPI.searchProducts(prodName, IConstant.API_KEY);
         //asynchronous call
         call.enqueue(this);
 
@@ -83,8 +85,10 @@ public class RestAPIProcessingBuilder implements Callback<ZappoProducts>{
 
     @Override
     public void onResponse(Call<ZappoProducts> call, Response<ZappoProducts> response) {
+        // process the result obtained
+        // and update the Product List with returned products
+
         String body = response.body().toString();
-        //Log.d("url is",url);
         boolean isSuccess = response.raw().isSuccessful();
         List<Product> products = new ArrayList<>();
 
@@ -92,12 +96,8 @@ public class RestAPIProcessingBuilder implements Callback<ZappoProducts>{
             products = response.body().getProducts();
         }
 
-         prods = new String[products.size()];
-
-
+        prods = new String[products.size()];
         String raw = response.raw().toString();
-        System.out.println(body);
-        //Log.d("response", raw);
 
         for (int i=0;i<products.size();i++){
             prods[i] = products.get(i).toString();
@@ -115,9 +115,11 @@ public class RestAPIProcessingBuilder implements Callback<ZappoProducts>{
 
     }
 
-
+    /**
+     * getter products
+     * @return List of Products
+     */
     public String[] getProducts() {
-
         return this.prods;
     }
 

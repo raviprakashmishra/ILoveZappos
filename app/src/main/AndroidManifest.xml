@@ -22,6 +22,7 @@
         </activity>
 
         <activity android:name=".ProductListActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
@@ -30,6 +31,12 @@
         <activity android:name=".ProductDetailsActivity">
 
         </activity>
+
+        <activity android:name=".CardFlipActivity">
+
+        </activity>
+
+
     </application>
 
 </manifest>

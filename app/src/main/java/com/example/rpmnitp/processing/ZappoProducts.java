@@ -8,6 +8,10 @@ package com.example.rpmnitp.processing;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * collection of Products
+ */
 public class ZappoProducts {
     List<Product> results  = new ArrayList<>();
 
