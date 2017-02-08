@@ -9,7 +9,7 @@ Main function of the project -
 2. REST API call to zappos to fetch products information.
 3. Floating action button on product details page.
 
-Technical features -
+###Technical features -
 
 1. Builder pattern to create complex object.
 2. Data Binding on Prduct details page.
@@ -18,19 +18,16 @@ Technical features -
 5. List view to see products list.
 
 
-Future scope -
+###Future scope -
 1. Product sharing with other persons.
 
-Product Screeshots -
+###Product Screeshots -
 
-Home Screen -
+####Home Screen -
 
-![alt tag](https://raw.githubusercontent.com/raviprakashmishra/ILoveZappos/master/app/imagescreenshots/Screenshot_20170208-023444.png)
+<img src=https://raw.githubusercontent.com/raviprakashmishra/ILoveZappos/master/app/imagescreenshots/Screenshot_20170208-023444.png width="250"/>
+####Products List Screen -
+<img src=https://raw.githubusercontent.com/raviprakashmishra/ILoveZappos/master/app/imagescreenshots/Screenshot_20170208-023504.png width="250"/>
+####Product details Screen -
+<img src=https://raw.githubusercontent.com/raviprakashmishra/ILoveZappos/master/app/imagescreenshots/Screenshot_20170208-023522.png width="250"/>
 
-Product List Screen -
-
-![alt tag](https://raw.githubusercontent.com/raviprakashmishra/ILoveZappos/master/app/imagescreenshots/Screenshot_20170208-023504.png)
-
-Product Details Screen -
-
-![alt tag](https://raw.githubusercontent.com/raviprakashmishra/ILoveZappos/master/app/imagescreenshots/Screenshot_20170208-023522.png)
