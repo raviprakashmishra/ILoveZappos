@@ -5,17 +5,18 @@ and displays the top product in product page.
 
 Main function of the project -
 
-1. Providing searc bar to search products.
-2. REST API call to zappos fetch product information.
+1. Providing searc bar to search products on enter.
+2. REST API call to zappos to fetch products information.
 3. Floating action button on product details page.
 
 Technical features -
 
-1. MVC pattern.
-2. Builder pattern to create complex object.
-3. Data Binding on Prduct details page.
-4. Retrofit to cdo REST calls.
-5. Piccaso to do image manipulation and rendering.
+1. Builder pattern to create complex object.
+2. Data Binding on Prduct details page.
+3. Retrofit to do REST calls.
+4. Piccaso to do image manipulation and rendering.
+5. List view to see products list.
+
 
 Future scope -
 1. Product sharing with other persons.
