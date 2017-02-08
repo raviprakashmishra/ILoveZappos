@@ -23,11 +23,10 @@ Main function of the project -
 
 ###Product Screeshots -
 
-####Home Screen -
 
 <img src=https://raw.githubusercontent.com/raviprakashmishra/ILoveZappos/master/app/imagescreenshots/Screenshot_20170208-023444.png width="250"/>
-####Products List Screen -
+
 <img src=https://raw.githubusercontent.com/raviprakashmishra/ILoveZappos/master/app/imagescreenshots/Screenshot_20170208-023504.png width="250"/>
-####Product details Screen -
+
 <img src=https://raw.githubusercontent.com/raviprakashmishra/ILoveZappos/master/app/imagescreenshots/Screenshot_20170208-023522.png width="250"/>
 
