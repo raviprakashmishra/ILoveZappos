@@ -1,4 +1,4 @@
-package com.example.rpmnitp.ilovezappos;
+package com.example.rpmnitp.helper;
 
 /**
  * Interface to maintain constants
