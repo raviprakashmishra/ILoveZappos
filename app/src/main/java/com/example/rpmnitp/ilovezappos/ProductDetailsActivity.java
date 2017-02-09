@@ -10,6 +10,7 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 
 import android.widget.Toast;
 
+import com.example.rpmnitp.helper.IConstant;
 import com.example.rpmnitp.ilovezappos.databinding.ProductDetailBinding;
 import com.example.rpmnitp.processing.Product;
 
@@ -54,7 +55,7 @@ public class ProductDetailsActivity extends BaseActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(activity," Product added into cart", Toast.LENGTH_LONG).show();
+                Toast.makeText(activity, IConstant.PROD_ADDED_MSG, Toast.LENGTH_LONG).show();
                 //Intent intent = new Intent(activity, CardFlipActivity.class);
                // startActivity(intent);
                callFlipCard();
@@ -73,7 +74,7 @@ public class ProductDetailsActivity extends BaseActivity {
 
         View prodImgView = findViewById(R.id.prod_image);
         ObjectAnimator animation = ObjectAnimator.ofFloat(prodImgView, "rotationY", 0.0f, 360f);
-        animation.setDuration(500);
+        animation.setDuration(1000);
         animation.setRepeatCount(1);
         animation.setInterpolator(new AccelerateDecelerateInterpolator());
         animation.start();

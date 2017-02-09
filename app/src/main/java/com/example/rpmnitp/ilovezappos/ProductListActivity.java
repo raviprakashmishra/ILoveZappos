@@ -15,6 +15,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import com.example.rpmnitp.adapters.SearchResultArrayAdapter;
+import com.example.rpmnitp.helper.IConstant;
 import com.example.rpmnitp.processing.Product;
 import com.example.rpmnitp.processing.RestAPIProcessingBuilder;
 

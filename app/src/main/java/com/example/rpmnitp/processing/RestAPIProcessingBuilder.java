@@ -3,19 +3,10 @@ package com.example.rpmnitp.processing;
 import android.app.ListActivity;
 import android.util.Log;
 import android.widget.Adapter;
-import android.widget.ArrayAdapter;
 
-import com.example.rpmnitp.ilovezappos.IConstant;
+import com.example.rpmnitp.helper.IConstant;
 import com.example.rpmnitp.ilovezappos.ProductListActivity;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,7 +15,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import retrofit2.http.Query;
 
 /**
  * Created by rpmnitp on 1/26/2017.

@@ -4,7 +4,10 @@
     <data>
         <variable name="product" type="com.example.rpmnitp.processing.Product"/>
     </data>
-<LinearLayout
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -19,7 +22,6 @@
         android:layout_marginTop="4px"
         android:layout_weight="1"
         app:thumbnailImageUrl="@{product.thumbnailImageUrl}"
-        android:background="@drawable/border"
         >
         >
     </ImageView>
@@ -29,7 +31,8 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">>
+        android:layout_weight="1"
+        android:background="#73bfc7">>
 
 
         <TextView
@@ -39,19 +42,19 @@
             android:text="@{product.productName}"
             android:textStyle="bold"
             android:textSize="50px"
-            android:layout_weight="2">
+            android:layout_weight="1">
         </TextView>
 
         <TextView
-                    android:id="@+id/prod_price"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:text="@{product.originalPrice}"
-                    android:textSize="40px"
-                    android:textColor="#ff0000"
-                    android:textStyle="bold"
-                    android:layout_weight="1">
-                </TextView>
+            android:id="@+id/prod_price"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="@{product.originalPrice}"
+            android:textSize="40px"
+            android:textColor="#ff0000"
+            android:textStyle="bold"
+            android:layout_weight="1">
+        </TextView>
 
         <TextView
             android:id="@+id/prod_description"
@@ -63,20 +66,22 @@
             android:autoLink="web">
         </TextView>
 
-        <android.support.design.widget.FloatingActionButton
-                    android:id="@+id/fab"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_gravity="center_horizontal|center_vertical"
-                    android:layout_margin="15dp"
-                    android:layout_weight="2"
-                    android:src="@drawable/fab" />
-
-
-
 
     </LinearLayout>
 
 </LinearLayout>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_anchor="@id/prod_image"
+            android:clickable="true"
+            app:layout_anchorGravity="bottom|right|end"
+            android:layout_margin="16dp"
+            android:layout_weight="2"
+            android:src="@drawable/fab" />
+
+    </android.support.design.widget.CoordinatorLayout>
 
 </layout>
