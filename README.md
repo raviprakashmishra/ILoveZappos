@@ -1,8 +1,7 @@
 # ILoveZappos
 
 An app, with search view on toolbar which calls Zappo product search REST API
-and displays the top product in product page. This has been made as part Zappos App challenge.
-
+and displays the top product in product page. 
 ### Apk download
 [Click here to download the APK](https://raw.githubusercontent.com/raviprakashmishra/ILoveZappos/master/app/app-release.apk?raw=true)
 
