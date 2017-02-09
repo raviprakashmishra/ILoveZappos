@@ -1,11 +1,15 @@
 # ILoveZappos
 
-Creating an app, with search view on toolbar which calls Zappo product search REST API
-and displays the top product in product page.
+An app, with search view on toolbar which calls Zappo product search REST API
+and displays the top product in product page. This has been made as part Zappos App challenge.
 
-Main function of the project -
+### apk download
+[Click here to download the APK](https://raw.githubusercontent.com/raviprakashmishra/ILoveZappos/master/app/app-release.apk?raw=true)
 
-1. Providing searc bar to search products on enter.
+
+###Main function of the project -
+
+1. Providing search bar to search products on enter.
 2. REST API call to zappos to fetch products information.
 3. Floating action button on product details page.
 
@@ -15,7 +19,7 @@ Main function of the project -
 2. Data Binding on Prduct details page.
 3. Retrofit to do REST calls.
 4. Piccaso to do image manipulation and rendering.
-5. List view to see products list.
+5. List view to render products.
 
 
 ###Future scope -
