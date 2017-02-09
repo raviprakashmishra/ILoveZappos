@@ -32,5 +32,5 @@ and displays the top product in product page. This has been made as part Zappos 
 
 <img src=https://raw.githubusercontent.com/raviprakashmishra/ILoveZappos/master/app/imagescreenshots/Screenshot_20170208-023504.png width="250"/>
 
-<img src=https://raw.githubusercontent.com/raviprakashmishra/ILoveZappos/master/app/imagescreenshots/Screenshot_20170208-023522.png width="250"/>
+<img src=https://raw.githubusercontent.com/raviprakashmishra/ILoveZappos/master/app/imagescreenshots/Screenshot_20170209-163432.png width="250"/>
 
